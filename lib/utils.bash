@@ -5,7 +5,7 @@ set -euo pipefail
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for plugin-opencode.
 GH_REPO="https://github.com/anomalyco/opencode"
 TOOL_NAME="plugin-opencode"
-TOOL_TEST="testasdfopencode"
+TOOL_TEST="bin/testasdfopencode"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"

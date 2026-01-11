@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
-if [[ "$1" = "--version" ]]; then
-	echo "${USAGE}"
-fi
+USAGE="test <command>: test the opencode installation path for asdf"
+
+case "${1:-}" in
+"-h" | "--help" | "help")
+    printf "%s\n" "${USAGE}"
+    exit 0
+    ;;
+*)
+    exit 0
+esac
+
+
+
