@@ -297,18 +297,18 @@ setup_gitlab() {
 
 case "${1:-}" in
 "-h" | "--help" | "help")
-	printf "%s\n" "$HELP"
-	exit 0
-	;;
+    printf "%s\n" "$HELP"
+    exit 0
+    ;;
 "--gitlab")
-	shift
-	setup_gitlab "$@"
-	;;
+    shift
+    setup_gitlab "$@"
+    ;;
 "--github")
-	shift
-	setup_github "$@"
-	;;
+    shift
+    setup_github "$@"
+    ;;
 *)
-	setup_github "$@"
-	;;
+    setup_github "$@"
+    ;;
 esac
