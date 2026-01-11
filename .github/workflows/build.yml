@@ -22,8 +22,8 @@ jobs:
         run: |
           git config user.name "Foo Bearer"
           ./setup.bash \
-            "asdf-foo" \
-            "foo --help" \
+            "asdf-opencode" \
+            "opencode --help" \
             "asdf-community" \
             "ASDF Community" \
             "https://github.com/asdf-vm/asdf" \
