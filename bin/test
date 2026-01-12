@@ -1,14 +1,51 @@
 #!/usr/bin/env bash
+
+set -euo pipefail
+
 USAGE="test <command>: test the opencode installation path for asdf"
+
+
+dev_install_latest_manual() {
+    printf "%s\n" "installing latest version for a test"
+    export ASDF_INSTALL_TYPE=version
+    export ASDF_INSTALL_VERSION=latest
+    export ASDF_INSTALL_PATH=${HOME}/.asdf/shims/opencode
+    export ASDF_PLUGIN_PATH=${HOME}/.asdf/plugins/opencode
+    bin/install
+}
+
+dev_download_manual() {
+    printf "%s\n" "doing a manual download"
+    export ASDF_INSTALL_TYPE=version
+    export ASDF_INSTALL_VERSION=1.1.3
+    export ASDF_INSTALL_PATH=${HOME}/.asdf/shims/opencode
+    export ASDF_PLUGIN_PATH=${HOME}/.asdf/plugins/opencode
+    export ASDF_DOWNLOAD_PATH="$(pwd)/downloads"
+    bin/download
+}
+
+
+
+
+
 
 case "${1:-}" in
 "-h" | "--help" | "help")
     printf "%s\n" "${USAGE}"
     exit 0
     ;;
-*)
+"-i" | "--install" | "install")
+    dev_install_latest_manual
     exit 0
+    ;;
+"-d" | "--download" | "download")
+    dev_download_manual
+    exit 0
+    ;;
+*)
+    printf "%s\n" "${USAGE}"
+    exit 0
+    ;;
 esac
-
 
 
